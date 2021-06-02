@@ -1,7 +1,11 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import Card from "./components/Card";
+import "./index.css";
+import Pagination from "./components/Pagination";
 function App({ match }) {
   const { pageNumber } = useParams();
 
@@ -26,17 +30,19 @@ function App({ match }) {
   }, [pageno]);
   return (
     <div>
-      <h3>Mern Pagination</h3>
+      <h1 className="text-center text-white mt-3">Mern Pagination</h1>
+      {/* pagination Component */}
+      <Pagination />
+      {/* end of pagination component */}
+      {/* start of posts cards component */}
       {loading ? (
         <h2>Loading...</h2>
       ) : posts.length == 0 ? (
         <h1>NOthing to show</h1>
       ) : (
-        posts.map((val) => {
-          return <h2>{val.body}</h2>;
-        })
+        <Card posts={posts} />
       )}
-      {/* pagination Component */}
+
       {/* posts cards componnets */}
     </div>
   );
