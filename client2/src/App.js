@@ -18,9 +18,8 @@ function App({ match }) {
       setloading(true);
       try {
         const res = await axios.post(`/ahmad/v1/posts?page=${pageno}`);
-        console.log(res.data.data);
         setposts(res.data.data);
-        setpages(res.pages);
+        setpages(res.data.pages);
         setloading(false);
       } catch (error) {
         console.log(error);
@@ -32,15 +31,15 @@ function App({ match }) {
     <div>
       <h1 className="text-center text-white mt-3">Mern Pagination</h1>
       {/* pagination Component */}
-      <Pagination />
+      <Pagination pages={pages} changepage={setpageno} pageno={pageno} />
       {/* end of pagination component */}
       {/* start of posts cards component */}
       {loading ? (
-        <h2>Loading...</h2>
+        <h2 className="text-center my-4">Loading...</h2>
       ) : posts.length == 0 ? (
         <h1>NOthing to show</h1>
       ) : (
-        <Card posts={posts} />
+        <Card posts={posts} pageno={pageno} />
       )}
 
       {/* posts cards componnets */}

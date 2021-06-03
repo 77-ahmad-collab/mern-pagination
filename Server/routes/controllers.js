@@ -4,7 +4,7 @@ const getPosts = async (req, res) => {
   console.log("posts route called");
   const pageNo = Number(req.query.page) || 1;
   //page content size
-  const pageSize = 50;
+  const pageSize = 10;
   const total = await posts.countDocuments();
   //calculate total no of pages for the require amount of data
   const pages = Math.ceil(total / pageSize);
