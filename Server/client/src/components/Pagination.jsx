@@ -41,7 +41,7 @@ const Pagination = ({ pages, changepage, pageno }) => {
             </button>
           );
         })}
-        <button>...</button>
+        <button onClick={() => changepage(startvalue + 5)}>...</button>
         <button onClick={() => changepage(pages)}>{pages}</button>
       </>
     );
@@ -50,7 +50,7 @@ const Pagination = ({ pages, changepage, pageno }) => {
         middlepaginaion = (
           <>
             <button onClick={() => changepage(1)}>{1}</button>
-            <button>...</button>
+            <button onClick={() => changepage(startvalue)}>...</button>
             {[...Array(4)].map((val, ind) => {
               return (
                 <button
@@ -69,7 +69,7 @@ const Pagination = ({ pages, changepage, pageno }) => {
                 </button>
               );
             })}
-            <button>...</button>
+            <button onClick={() => changepage(startvalue + 5)}>...</button>
             <button onClick={() => changepage(pages)}>{pages}</button>
           </>
         );
@@ -77,7 +77,7 @@ const Pagination = ({ pages, changepage, pageno }) => {
         middlepaginaion = (
           <>
             <button onClick={() => changepage(1)}>{1}</button>
-            <button>...</button>
+            <button onClick={() => changepage(startvalue)}>...</button>
             {[...Array(4)].map((val, ind) => {
               return (
                 <button
