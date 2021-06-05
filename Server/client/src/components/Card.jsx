@@ -5,7 +5,7 @@ const Card = ({ posts, pageno }) => {
   const { pageNumber } = useParams();
   // let pageno = pageNumber || 1;
   return (
-    <div className="card_cont">
+    <div className="card_cont mb-5">
       {posts.map((val, ind) => {
         const { title, author, body, _id } = val;
         return (

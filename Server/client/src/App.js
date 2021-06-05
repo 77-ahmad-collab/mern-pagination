@@ -29,7 +29,7 @@ function App({ match }) {
   }, [pageno]);
   return (
     <div>
-      <h1 className="text-center text-white mt-3">Mern Pagination</h1>
+      <h1 className="text-center text-white mt-3 ">Mern Pagination</h1>
       {/* pagination Component */}
       <Pagination pages={pages} changepage={setpageno} pageno={pageno} />
       {/* end of pagination component */}
